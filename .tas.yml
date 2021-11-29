@@ -5,13 +5,13 @@ modifiers:
     cli: "--forbid-pending --no-bail"
 postMerge:
   pattern:
-    - "test/algorithms/geometric-test.js"
+    - "integration-tests/functions/__tests__/functions-dev.js"
   strategy:
     threshold: <5|100s>
     type: <commit|time>
 preMerge:
   pattern:
-    - "test/algorithms/geometric-test.js"
+    - "integration-tests/functions/__tests__/functions-dev.js"
 stability:
   consecutive_runs: 5
 preRun:
