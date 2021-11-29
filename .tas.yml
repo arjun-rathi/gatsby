@@ -1,0 +1,21 @@
+---
+framework: jest
+modifiers:
+  - type: jest
+    cli: "--forbid-pending --no-bail"
+postMerge:
+  pattern:
+    - "test/algorithms/geometric-test.js"
+  strategy:
+    threshold: <5|100s>
+    type: <commit|time>
+preMerge:
+  pattern:
+    - "test/algorithms/geometric-test.js"
+stability:
+  consecutive_runs: 5
+preRun:
+  - npm install -g gatsby-cli
+postRun:
+  - node --version
+version: 2.0
